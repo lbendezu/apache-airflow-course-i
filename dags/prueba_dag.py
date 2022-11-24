@@ -9,9 +9,9 @@ from airflow.decorators import task
 
 with DAG(
     dag_id="mi_primer_dag",
-    schedule=None,
+    schedule="@daily",
     catchup=False,
-    start_date=pendulum.datetime(2021, 1, 1, tz="UTC"),
+    start_date=pendulum.datetime(2022, 11, 20, tz="UTC"),
     tags=["rapido"]
 ) as dag:
 
@@ -23,3 +23,16 @@ with DAG(
         print(type(df))
 
     prueba_1_load = prueba_1()
+
+
+
+
+
+
+#s3://mi-s3-prueba/
+
+#s3://mi-s3-prueba/sistema_facturacion/2022/01/01/archivo_data.txt
+#s3://mi-s3-prueba/sistema_facturacion/2022/01/02/archivo_data.txt
+#s3://mi-s3-prueba/sistema_facturacion/2022/01/03/archivo_data.txt
+#s3://mi-s3-prueba/sistema_facturacion/2022/01/04/archivo_data.txt
+#s3://mi-s3-prueba/sistema_facturacion/2022/01/05/archivo_data.txt
