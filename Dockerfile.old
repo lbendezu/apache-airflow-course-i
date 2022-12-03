@@ -10,7 +10,3 @@ USER airflow
 RUN pip install --no-cache-dir --user pandas
 RUN pip install --no-cache-dir --user sqlalchemy
 RUN pip install --no-cache-dir --user PythonTurtle
-RUN pip install --no-cache-dir apache-airflow-providers-amazon
-RUN pip install --no-cache-dir apache-airflow-providers-google
-RUN pip install --no-cache-dir apache-airflow-providers-microsoft-azure
-RUN pip install --no-cache-dir apache-airflow-providers-datadog
