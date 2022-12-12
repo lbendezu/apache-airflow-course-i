@@ -22,3 +22,8 @@ docker-compose down
 docker-compose up --build
 ```
 2. Cuando termine de cargar el paso 1, en un navegador ir a la dirección http://localhost:8080
+
+
+## Pruebas del API Estable de Airflow con Postman:
+
+Utilizar el archivo "DataScienceResearchPeru.postman_collection.json" que se encuentra en la raíz del repositorio para importar la colección en Postman y porder revisar las peticiones revisadas en clase.

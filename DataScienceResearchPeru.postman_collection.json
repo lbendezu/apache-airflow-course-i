@@ -1,0 +1,698 @@
+{
+	"info": {
+		"_postman_id": "2b4b74c4-d99c-4f93-94b7-1df66e2f42d1",
+		"name": "DataScienceResearchPeru",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5817557"
+	},
+	"item": [
+		{
+			"name": "DAG RUN",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "airflow",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "airflow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/dags/mi_primer_dag/dagRuns",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"dags",
+						"mi_primer_dag",
+						"dagRuns"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get DAGRUNs",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "airflow",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "airflow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/dags/mi_primer_dag/dagRuns",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"dags",
+						"mi_primer_dag",
+						"dagRuns"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List XCOM entries",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "airflow",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "airflow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/dags/xcom_basic_test_ds/dagRuns/manual__2022-12-03T01:36:03.530129+00:00/taskInstances/tarea_2/xcomEntries",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"dags",
+						"xcom_basic_test_ds",
+						"dagRuns",
+						"manual__2022-12-03T01:36:03.530129+00:00",
+						"taskInstances",
+						"tarea_2",
+						"xcomEntries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Variables",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "airflow",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "airflow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/variables",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"variables"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add variable",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "airflow",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "airflow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"key\": \"database_name\",\r\n\"description\": \"Nombre de la base de datos de prueba\",\r\n\"value\": \"postgresql\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/variables",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"variables"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update variable",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "airflow",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "airflow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"key\": \"database_name\",\r\n    \"description\": \"mi descripcion\",\r\n    \"value\": \"test2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/variables/database_name",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"variables",
+						"database_name"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete variable",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "airflow",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "airflow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/variables/test_1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"variables",
+						"test_1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List users",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "airflow",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "airflow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List roles",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "airflow",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "airflow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/roles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create user",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "airflow",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "airflow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"first_name\": \"Juan\",\r\n\"last_name\": \"Perez\",\r\n\"username\": \"jperez\",\r\n\"email\": \"jperez@mail.com\",\r\n\"roles\": [\r\n{\r\n\"name\": \"Op\"\r\n}\r\n],\r\n\"password\": \"airflow\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "airflow",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "airflow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"first_name\": \"Juan\",\r\n\"last_name\": \"Perez\",\r\n\"username\": \"jperez\",\r\n\"email\": \"jperez@mail.com\",\r\n\"roles\": [\r\n{\r\n\"name\": \"Op\"\r\n}\r\n],\r\n\"password\": \"airflow\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/jperez",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"jperez"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List permissions",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "airflow",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "airflow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/permissions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"permissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Connections",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "airflow",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "airflow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/connections",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"connections"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Connection",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "airflow",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "airflow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"connection_id\": \"Postgresql3\",\r\n\"conn_type\": \"sql server2\",\r\n\"description\": \"Demo postgres\",\r\n\"host\": \"localhost\",\r\n\"login\": \"test\",\r\n\"schema\": \"test\",\r\n\"port\": 1500,\r\n\"password\": \"password\",\r\n\"extra\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/connections",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"connections"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update connection",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "airflow",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "airflow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"connection_id\": \"Postgresql3\",\r\n\"conn_type\": \"postgres\",\r\n\"description\": \"Demo postgres\",\r\n\"host\": \"127.0.0.1\",\r\n\"login\": \"test\",\r\n\"schema\": \"test\",\r\n\"port\": 1500,\r\n\"password\": \"clave\",\r\n\"extra\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/connections/Postgresql3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"connections",
+						"Postgresql3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete connection",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "airflow",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "airflow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/connections/Postgresql3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"connections",
+						"Postgresql3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List logs",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "airflow",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "airflow",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/eventLogs",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"eventLogs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
